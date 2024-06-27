@@ -14,8 +14,8 @@ Please see this link for context onboarding: https://en.wikipedia.org/wiki/Conwa
    ```
    ./bin/setup
    ```
-
-2. Run program with file input. Delay between state is 500 milliseconds as default
+   
+2. Run program with file input (delay between state is 500 milliseconds as default)
    ```
    ./bin/run <input file name>
    ```
@@ -26,10 +26,9 @@ Please see this link for context onboarding: https://en.wikipedia.org/wiki/Conwa
    ./bin/run input/gosper_glider_gun.txt
    ./bin/run input/glider_destroying_cthulhu.txt
    ```
-   Type cmd + c to exit.
-
-
-4. Run program with custom delay
+   Type cmd + c to exit
+   
+3. Run program with custom delay
    ```
    ./bin/run <input file name> <delay in milliseconds>
    ```
@@ -40,6 +39,9 @@ Please see this link for context onboarding: https://en.wikipedia.org/wiki/Conwa
    ./bin/run input/gosper_glider_gun.txt 100
    ./bin/run input/glider_destroying_cthulhu.txt 100
    ```
-   Type cmd + c to exit.
-
-![conway-game-of-life-demo](https://github.com/mukhlishga/conway-game-of-life-java-gradle/assets/84616078/56aaa862-8093-4b4d-805e-3ad438b3cd8e)
+   Type cmd + c to exit
+   
+4. Short demo
+<p align="center">
+  <img src="https://github.com/mukhlishga/conway-game-of-life-java-gradle/blob/main/conway-game-of-life-demo.gif" alt="conway-game-of-life-demo" />
+</p>
