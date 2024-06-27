@@ -41,3 +41,5 @@ Please see this link for context onboarding: https://en.wikipedia.org/wiki/Conwa
    ./bin/run input/glider_destroying_cthulhu.txt 100
    ```
    Type cmd + c to exit.
+
+![conway-game-of-life-demo](https://github.com/mukhlishga/conway-game-of-life-java-gradle/assets/84616078/56aaa862-8093-4b4d-805e-3ad438b3cd8e)
