@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+java -cp $DIR/../build/libs/conway-game-of-life-java-gradle-1.0-SNAPSHOT.jar com.conwaygameoflife.Main $1 $2
