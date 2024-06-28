@@ -22,12 +22,13 @@ public class InputParser {
     public void parseInput(String fileName, String timeout) throws InterruptedException {
         parseFileInput(fileName);
         ConwayGameOfLife conwayGameOfLife = new ConwayGameOfLife(initialRowSize, initialColumnSize, initialCellList, createInitialMatrix());
+        conwayGameOfLife.printMatrix();
 
         while (true) {
+            TimeUnit.MILLISECONDS.sleep(timeout != null ? parseLong(timeout) : 500);
             System.out.print("\033[H\033[2J");
             System.out.flush();
             conwayGameOfLife.playOnce();
-            TimeUnit.MILLISECONDS.sleep(timeout != null ? parseLong(timeout) : 500);
         }
     }
 

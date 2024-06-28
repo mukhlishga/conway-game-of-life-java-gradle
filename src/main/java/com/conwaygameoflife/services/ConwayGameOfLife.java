@@ -18,8 +18,30 @@ public class ConwayGameOfLife {
     public void playOnce() {
         updateCellListBasedOnNeighbors();
         updateMatrixBasedOnCurrentState();
-        createMatrix();
+        implementMatrix();
         printMatrix();
+    }
+
+    public void printMatrix() {
+        for (var row: matrix) {
+            for (var cell: row) {
+                System.out.print(cell);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    private void implementMatrix() {
+        matrix = new char[rowSize][columnSize];
+        for (var i = 0; i < rowSize; i++) {
+            for (var j = 0; j < columnSize; j++) {
+                matrix[i][j] = '.';
+            }
+        }
+        for (var cell: cellList) {
+            matrix[cell[0]][cell[1]] = 'O';
+        }
     }
 
     private void updateCellListBasedOnNeighbors() {
@@ -74,28 +96,6 @@ public class ConwayGameOfLife {
             }
         } else if (isCellAtMostRight()) {
             columnSize++;
-        }
-    }
-
-    private void createMatrix() {
-        matrix = new char[rowSize][columnSize];
-        for (var i = 0; i < rowSize; i++) {
-            for (var j = 0; j < columnSize; j++) {
-                matrix[i][j] = '.';
-            }
-        }
-        for (var cell: cellList) {
-            matrix[cell[0]][cell[1]] = 'O';
-        }
-    }
-
-    private void printMatrix() {
-        for (var row: matrix) {
-            for (var cell: row) {
-                System.out.print(cell);
-                System.out.print(" ");
-            }
-            System.out.println();
         }
     }
 
