@@ -1,6 +1,6 @@
 package com.conwaygameoflife.services;
 
-import static com.conwaygameoflife.utils.InputParser.addToIntArray;
+import com.conwaygameoflife.utils.MatrixUtil;
 
 public class ConwayGameOfLife {
     private int rowSize;
@@ -15,33 +15,11 @@ public class ConwayGameOfLife {
         this.matrix = initialMatrix;
     }
 
-    public void playOnce() {
+    public char[][] playOnce() {
         updateCellListBasedOnNeighbors();
         updateMatrixBasedOnCurrentState();
-        implementMatrix();
-        printMatrix();
-    }
-
-    public void printMatrix() {
-        for (var row: matrix) {
-            for (var cell: row) {
-                System.out.print(cell);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-    }
-
-    private void implementMatrix() {
-        matrix = new char[rowSize][columnSize];
-        for (var i = 0; i < rowSize; i++) {
-            for (var j = 0; j < columnSize; j++) {
-                matrix[i][j] = '.';
-            }
-        }
-        for (var cell: cellList) {
-            matrix[cell[0]][cell[1]] = 'O';
-        }
+        matrix = MatrixUtil.implementMatrix(rowSize, columnSize, cellList);
+        return matrix;
     }
 
     private void updateCellListBasedOnNeighbors() {
@@ -53,7 +31,7 @@ public class ConwayGameOfLife {
                     int[] cell = new int[2];
                     cell[0] = r;
                     cell[1] = c;
-                    cellList = addToIntArray(cellList, cell);
+                    cellList = MatrixUtil.addToIntArray(cellList, cell);
                 }
             }
         }
