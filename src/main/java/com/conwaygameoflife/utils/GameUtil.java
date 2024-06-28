@@ -11,14 +11,11 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.Long.parseLong;
 
 public class GameUtil {
-    public int[][] initialCellList = {};
-    public int initialRowSize;
-    public int initialColumnSize;
+    public static int initialRowSize;
+    public static int initialColumnSize;
+    public static int[][] initialCellList = {};
 
-    public GameUtil() {
-    }
-
-    public void play(String fileName, String timeout) throws InterruptedException {
+    public static void play(String fileName, String timeout) throws InterruptedException {
         parseFileInput(fileName);
 
         char[][] initialMatrix = MatrixUtil.implementMatrix(initialRowSize, initialColumnSize, initialCellList);
@@ -37,7 +34,7 @@ public class GameUtil {
         }
     }
 
-    public void parseFileInput(String filepath) {
+    public static void parseFileInput(String filepath) {
         try {
             BufferedReader br = new BufferedReader(new FileReader((filepath)));
             String line;
@@ -68,12 +65,12 @@ public class GameUtil {
         }
     }
 
-    private void clearScreen() {
+    public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    private void delay(String timeout) throws InterruptedException {
+    public static void delay(String timeout) throws InterruptedException {
         TimeUnit.MILLISECONDS.sleep(timeout != null ? parseLong(timeout) : 500);
     }
 }
