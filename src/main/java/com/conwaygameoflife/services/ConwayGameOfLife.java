@@ -114,8 +114,8 @@ public class ConwayGameOfLife {
                 neighbors += 1;
             }
         }
-        if (r < rowSize-1){
-            if (c < columnSize-1 && matrix[r+1][c+1] == 'O') {
+        if (r < rowSize-1 && c < columnSize-1){
+            if (matrix[r+1][c+1] == 'O') {
                 neighbors += 1;
             }
         }
